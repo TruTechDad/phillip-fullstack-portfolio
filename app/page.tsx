@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
+import About from "@/components/About";
 
 export default function Home() {
   return (
@@ -100,6 +101,8 @@ export default function Home() {
           </button>
         </motion.div>
       </section>
+
+      <About />
     </main>
   );
 }
