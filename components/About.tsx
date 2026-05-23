@@ -8,7 +8,7 @@ export default function About() {
             About Me
           </p>
 
-          <h2 className="mb-6 text-4xl font-bold leading-tight md:text-5xl">
+          <h2 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl">
             Building Skills For The Future Of Tech
           </h2>
 

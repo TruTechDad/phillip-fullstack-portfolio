@@ -41,14 +41,16 @@ export default function Projects() {
           Projects
         </p>
 
-        <h2 className="text-4xl font-bold md:text-5xl">Featured Work</h2>
+        <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
+          Featured Work
+        </h2>
       </div>
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <div
             key={project.title}
-            className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md transition duration-300 hover:-translate-y-2 hover:border-blue-400"
+            className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md transition duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-400"
           >
             <div className="mb-6 h-48 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20" />
 

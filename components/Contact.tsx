@@ -5,7 +5,7 @@ export default function Contact() {
         Contact
       </p>
 
-      <h2 className="mb-6 text-4xl font-bold md:text-5xl">
+      <h2 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl">
         Let’s Build Something Amazing
       </h2>
 

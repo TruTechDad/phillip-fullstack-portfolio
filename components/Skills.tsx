@@ -37,7 +37,7 @@ export default function Skills() {
           Skills
         </p>
 
-        <h2 className="text-4xl font-bold md:text-5xl">
+        <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
           Technologies & Expertise
         </h2>
       </div>
