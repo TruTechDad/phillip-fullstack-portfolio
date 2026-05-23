@@ -24,7 +24,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-6 text-5xl font-extrabold leading-tight md:text-7xl"
+          className="mb-6 text-4xl font-extrabold leading-tight sm:text-5xl md:text-7xl"
         >
           Phillip Hamilton Brown
         </motion.h1>
@@ -42,7 +42,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="max-w-2xl text-lg leading-relaxed text-gray-300"
+          className="max-w-2xl px-2 text-base leading-relaxed text-gray-300 sm:text-lg"
         >
           Building modern web applications, creative tech projects, and
           future-focused software solutions.
@@ -94,7 +94,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-10 flex flex-wrap justify-center gap-4"
+          className="mt-10 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row sm:justify-center"
         >
           <button className="rounded-2xl bg-blue-500 px-8 py-4 font-semibold shadow-lg shadow-blue-500/30 transition hover:scale-105 hover:bg-blue-600">
             View Projects

@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#0B0F19]/80 backdrop-blur-lg">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
         <h1 className="text-xl font-bold tracking-wide text-white">PHB.dev</h1>
 
         <ul className="hidden gap-8 text-sm font-medium md:flex">

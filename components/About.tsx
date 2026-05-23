@@ -1,6 +1,9 @@
 export default function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-6 py-32">
+    <section
+      id="about"
+      className="mx-auto max-w-6xl px-4 py-24 md:px-6 md:py-32"
+    >
       <div className="grid gap-12 md:grid-cols-2 md:items-center">
         {/* Left Side */}
         <div>
