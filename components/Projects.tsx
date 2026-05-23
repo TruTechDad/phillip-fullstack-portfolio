@@ -1,35 +1,57 @@
+import { image } from "framer-motion/client";
+import Image from "next/image";
+
 const projects = [
   {
     title: "Workout Generator",
+
+    image: "workout-generator.png",
     description:
       "A fitness application that generates workout routines based on user goals and training preferences.",
 
-    tech: ["React", "JavaScript", "CSS"],
+    tech: ["JavaScript", "CSS"],
 
-    github: "https://github.com/",
-    live: "https://example.com",
+    github: "https://github.com/TruTechDad/lets-workout",
+    live: "https://trutechdad.github.io/lets-workout/",
   },
 
+  // {
+  //   title: "QA Test Dashboard",
+  //   description:
+  //     "A dashboard for tracking software test cases, test results, and QA workflows with a modern UI.",
+
+  //   tech: ["Next.js", "Tailwind", "TypeScript"],
+
+  //   github: "https://github.com/",
+  //   live: "https://example.com",
+  // },
+
   {
-    title: "QA Test Dashboard",
+    title: "QA Bug Tracker",
+
+    image: "qa-bug-tracker.png",
+
     description:
-      "A dashboard for tracking software test cases, test results, and QA workflows with a modern UI.",
+      "Built a bug tracking system simulating Jira workflows using HTML, CSS, and JavaScript with full CRUD functionality and persistent storage.",
 
-    tech: ["Next.js", "Tailwind", "TypeScript"],
+    tech: ["HTML", "CSS", "JavaScript"],
 
-    github: "https://github.com/",
-    live: "https://example.com",
+    github: "https://github.com/TruTechDad/qa-bug-tracker",
+    live: "https://trutechdad.github.io/qa-bug-tracker/",
   },
 
   {
     title: "Application Tracker",
+
+    image: "application-tracker.png",
+
     description:
-      "A full stack application for tracking job applications, interviews, and recruiter communication.",
+      "The Job Application Tracker is a simple web app designed to help users manage and organize their job search.",
 
-    tech: ["MongoDB", "Express", "React", "Node.js"],
+    tech: ["HTML", "JavaScript"],
 
-    github: "https://github.com/",
-    live: "https://example.com",
+    github: "https://github.com/TruTechDad/application-tracker",
+    live: "https://trutechdad.github.io/application-tracker/",
   },
 ];
 
@@ -55,7 +77,14 @@ export default function Projects() {
             key={project.title}
             className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md transition duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-400"
           >
-            <div className="mb-6 h-48 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20" />
+            <div className="relative mb-6 h-48 overflow-hidden rounded-2xl">
+              <Image
+                src={`/images/projects/${project.image}`}
+                alt={project.title}
+                fill
+                className="object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
 
             <h3 className="mb-4 text-2xl font-semibold">{project.title}</h3>
 
