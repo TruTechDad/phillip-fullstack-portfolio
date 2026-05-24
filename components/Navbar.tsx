@@ -19,8 +19,8 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <button className="rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold">
-          Resume
+        <button className="rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold transition hover:bg-blue-600">
+          Resume Coming Soon
         </button>
       </div>
     </nav>

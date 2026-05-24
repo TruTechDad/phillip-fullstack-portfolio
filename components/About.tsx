@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 export default function About() {
   return (
     <section
