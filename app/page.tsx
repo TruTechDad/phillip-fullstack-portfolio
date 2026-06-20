@@ -10,6 +10,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ToolsGear from "@/components/ToolsGear";
 import Image from "next/image";
+import Journey from "@/components/Journey";
 
 export default function Home() {
   return (
@@ -122,6 +123,7 @@ export default function Home() {
       </div>
 
       <About />
+      <Journey />
       <Skills />
       <Projects />
       <ToolsGear />
