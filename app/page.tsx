@@ -35,9 +35,7 @@ export default function Home() {
 
           <h1 className="mb-6 text-5xl font-extrabold leading-tight md:text-7xl">
             Phillip
-            <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              Hamilton Brown
-            </span>
+            <span className="block text-[#D4AF37]">Hamilton Brown</span>
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
