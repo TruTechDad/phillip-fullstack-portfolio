@@ -35,12 +35,14 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <button
-          disabled
-          className="cursor-not-allowed rounded-xl border border-[#2B2B2B] bg-[#111111] px-4 py-2 text-sm font-semibold text-[#C8C8C8] opacity-70"
+        <a
+          href="/resume/phillip-hamilton-brown-resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-xl border border-[#D4AF37] px-4 py-2 text-sm font-semibold text-[#D4AF37] transition hover:bg-[#D4AF37] hover:text-black"
         >
-          Resume Coming Soon
-        </button>
+          View Resume
+        </a>
       </div>
     </nav>
   );
