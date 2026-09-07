@@ -1,3 +1,4 @@
+import Reveal from "./Reveal";
 import Image from "next/image";
 import Badge from "./ui/Badge";
 import Button from "./ui/Button";
@@ -78,44 +79,48 @@ export default function Projects() {
       </div>
 
       <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
-          <article
+        {projects.map((project, index) => (
+          <Reveal
             key={project.title}
-            className="group flex flex-col rounded-3xl border border-[#2B2B2B] bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#D4AF37] hover:shadow-2xl hover:shadow-[#D4AF37]/10"
+            delay={index * 0.12}
+            direction="up"
+            distance={50}
           >
-            <div className="relative mb-6 h-48 overflow-hidden rounded-2xl border border-[#2B2B2B]">
-              <Image
-                src={`/images/projects/${project.image}`}
-                alt={`${project.title} project screenshot`}
-                fill
-                className="object-cover transition duration-500 group-hover:scale-105"
-              />
-            </div>
+            <article className="group flex h-full flex-col rounded-3xl border border-[#2B2B2B] bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#D4AF37] hover:shadow-2xl hover:shadow-[#D4AF37]/10">
+              <div className="relative mb-6 h-48 overflow-hidden rounded-2xl border border-[#2B2B2B]">
+                <Image
+                  src={`/images/projects/${project.image}`}
+                  alt={`${project.title} project screenshot`}
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
 
-            <h3 className="mb-4 text-2xl font-semibold text-[#FAFAFA]">
-              {project.title}
-            </h3>
+              <h3 className="mb-4 text-2xl font-semibold text-[#FAFAFA]">
+                {project.title}
+              </h3>
 
-            <p className="mb-6 flex-grow leading-relaxed text-[#C8C8C8]">
-              {project.description}
-            </p>
+              <p className="mb-6 flex-grow leading-relaxed text-[#C8C8C8]">
+                {project.description}
+              </p>
 
-            <div className="mb-6 flex flex-wrap gap-2">
-              {project.tech.map((tech) => (
-                <Badge key={tech}>{tech}</Badge>
-              ))}
-            </div>
+              <div className="mb-6 flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <Badge key={tech}>{tech}</Badge>
+                ))}
+              </div>
 
-            <div className="flex flex-wrap gap-3">
-              <Button href={project.github} variant="gold">
-                GitHub
-              </Button>
+              <div className="flex flex-wrap gap-3">
+                <Button href={project.github} variant="gold">
+                  GitHub
+                </Button>
 
-              <Button href={project.live} variant="silver">
-                Live Demo
-              </Button>
-            </div>
-          </article>
+                <Button href={project.live} variant="silver">
+                  Live Demo
+                </Button>
+              </div>
+            </article>
+          </Reveal>
         ))}
       </div>
     </section>

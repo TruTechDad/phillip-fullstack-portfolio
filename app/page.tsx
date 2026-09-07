@@ -65,7 +65,7 @@ export default function Home() {
           {/* Photo */}
           <div className="relative mx-auto h-[450px] w-[350px] overflow-hidden rounded-3xl border border-[#D4AF37]/30 bg-[#111111] shadow-2xl shadow-[#D4AF37]/10">
             <Image
-              src="/images/profile/phillip-profile.jpg"
+              src="/images/profile/phillip-profile.JPG"
               alt="Phillip Hamilton Brown"
               fill
               className="object-cover transition duration-500 hover:scale-105"

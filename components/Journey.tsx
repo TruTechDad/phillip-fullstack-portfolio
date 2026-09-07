@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 export default function Journey() {
   const milestones = [
     {
@@ -64,23 +66,22 @@ export default function Journey() {
       <div className="relative space-y-10">
         <div className="absolute left-4 top-0 h-full w-[2px] bg-gradient-to-b from-[#D4AF37] via-[#C8C8C8] to-transparent" />
 
-        {milestones.map((item) => (
-          <div
-            key={item.title}
-            className="relative ml-12 rounded-3xl border border-[#2B2B2B] bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37] hover:shadow-lg hover:shadow-[#D4AF37]/10"
-          >
-            <div className="absolute -left-10 top-8 h-5 w-5 rounded-full border-4 border-[#050505] bg-[#D4AF37] shadow-lg shadow-[#D4AF37]/30" />
+        {milestones.map((item, index) => (
+          <Reveal key={item.title} delay={index * 0.12}>
+            <div className="relative ml-12 rounded-3xl border border-[#2B2B2B] bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#D4AF37] hover:shadow-lg hover:shadow-[#D4AF37]/10">
+              <div className="absolute -left-10 top-8 h-5 w-5 rounded-full border-4 border-[#050505] bg-[#D4AF37] shadow-lg shadow-[#D4AF37]/30" />
 
-            <div className="mb-2 text-sm font-semibold text-[#D4AF37]">
-              {item.year}
+              <div className="mb-2 text-sm font-semibold text-[#D4AF37]">
+                {item.year}
+              </div>
+
+              <h3 className="mb-3 text-xl font-bold text-[#FAFAFA]">
+                {item.title}
+              </h3>
+
+              <p className="text-[#C8C8C8]">{item.description}</p>
             </div>
-
-            <h3 className="mb-3 text-xl font-bold text-[#FAFAFA]">
-              {item.title}
-            </h3>
-
-            <p className="text-[#C8C8C8]">{item.description}</p>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>
