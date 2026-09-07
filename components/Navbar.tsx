@@ -36,7 +36,7 @@ export default function Navbar() {
         </ul>
 
         <a
-          href="/resume/phillip-hamilton-brown-resume.pdf"
+          href="/resume/Phillip-Hamilton-Brown-resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-xl border border-[#D4AF37] px-4 py-2 text-sm font-semibold text-[#D4AF37] transition hover:bg-[#D4AF37] hover:text-black"
