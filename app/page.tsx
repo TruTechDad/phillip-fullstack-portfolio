@@ -27,24 +27,60 @@ export default function Home() {
       <div className="mx-auto flex max-w-7xl flex-col-reverse items-center gap-16 px-6 py-24 lg:flex-row">
         {/* LEFT SIDE */}
         <div className="flex-1 text-center lg:text-left">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#D4AF37]">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.1,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#D4AF37]"
+          >
             Full Stack Developer • QA • Cybersecurity
-          </p>
+          </motion.p>
 
-          <div className="mb-6 inline-flex items-center rounded-full border border-green-500/20 bg-green-500/10 px-4 py-2 text-sm text-green-400">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.2,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="mb-6 inline-flex items-center rounded-full border border-green-500/20 bg-green-500/10 px-4 py-2 text-sm text-green-400"
+          >
             ● Open to Opportunities
-          </div>
+          </motion.div>
 
-          <h1 className="mb-6 text-5xl font-extrabold leading-tight md:text-7xl">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.3,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="mb-6 text-5xl font-bold leading-tight text-[#FAFAFA] md:text-7xl"
+          >
             Phillip
             <span className="block text-[#D4AF37]">Hamilton Brown</span>
-          </h1>
+          </motion.h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#C8C8C8]">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.7,
+              delay: 0.45,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="mt-6 max-w-2xl text-lg leading-relaxed text-[#C8C8C8]"
+          >
             Full Stack Developer building modern web applications while
             expanding my expertise in QA Engineering, Cloud Technologies, AI,
             and Cybersecurity.
-          </p>
+          </motion.p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
             <Button href="#projects" variant="gold">
@@ -60,18 +96,42 @@ export default function Home() {
         {/* RIGHT SIDE */}
         <div className="relative flex-1">
           {/* Glow */}
-          <div className="absolute inset-0 rounded-full bg-[#D4AF37]/10 blur-3xl" />
+          <motion.div
+            animate={{
+              x: [0, 18, -12, 0],
+              y: [0, -14, 10, 0],
+              scale: [1, 1.08, 0.96, 1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute inset-0 rounded-full bg-[#D4AF37]/10 blur-3xl"
+          />
 
           {/* Photo */}
-          <div className="relative mx-auto h-[450px] w-[350px] overflow-hidden rounded-3xl border border-[#D4AF37]/30 bg-[#111111] shadow-2xl shadow-[#D4AF37]/10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{
+              duration: 0.9,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            whileHover={{
+              scale: 1.02,
+              rotate: 0.5,
+            }}
+            className="relative mx-auto h-[450px] w-[350px] overflow-hidden rounded-3xl border border-[#D4AF37]/30 bg-[#111111] shadow-2xl shadow-[#D4AF37]/10"
+          >
             <Image
-              src="/images/profile/phillip-profile.JPG"
+              src="/images/profile/phillip-profile.PNG"
               alt="Phillip Hamilton Brown"
               fill
-              className="object-cover transition duration-500 hover:scale-105"
+              className="object-cover transition duration-700 hover:scale-105"
               priority
             />
-          </div>
+          </motion.div>
 
           {/* Floating Tech Tags */}
           <motion.div

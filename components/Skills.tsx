@@ -1,3 +1,4 @@
+import Reveal from "./Reveal";
 import SectionHeading from "./ui/SectionHeading";
 import Badge from "./ui/Badge";
 import Button from "./ui/Button";
@@ -43,18 +44,25 @@ export default function Skills() {
       <SectionHeading eyebrow="Skills" title="Technologies & Expertise" />
 
       <div className="grid gap-8 md:grid-cols-2">
-        {skillCategories.map((category) => (
-          <Card key={category.title}>
-            <h3 className="mb-6 text-2xl font-semibold text-[#D4AF37]">
-              {category.title}
-            </h3>
+        {skillCategories.map((category, index) => (
+          <Reveal
+            key={category.title}
+            delay={index * 0.1}
+            direction={index % 2 === 0 ? "left" : "right"}
+            distance={40}
+          >
+            <Card>
+              <h3 className="mb-6 text-2xl font-semibold text-[#D4AF37]">
+                {category.title}
+              </h3>
 
-            <div className="flex flex-wrap gap-3">
-              {category.skills.map((skill) => (
-                <Badge key={skill}>{skill}</Badge>
-              ))}
-            </div>
-          </Card>
+              <div className="flex flex-wrap gap-3">
+                {category.skills.map((skill) => (
+                  <Badge key={skill}>{skill}</Badge>
+                ))}
+              </div>
+            </Card>
+          </Reveal>
         ))}
       </div>
     </section>

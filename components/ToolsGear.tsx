@@ -1,3 +1,4 @@
+import Reveal from "./Reveal";
 import Image from "next/image";
 import Badge from "./ui/Badge";
 import Button from "./ui/Button";
@@ -62,40 +63,44 @@ export default function ToolsGear() {
       />
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {gear.map((item) => (
-          <article
+        {gear.map((item, index) => (
+          <Reveal
             key={item.name}
-            className="group flex flex-col rounded-3xl border border-[#2B2B2B] bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#D4AF37] hover:shadow-2xl hover:shadow-[#D4AF37]/10"
+            delay={index * 0.1}
+            direction="up"
+            distance={45}
           >
-            <div className="relative mb-5 h-48 overflow-hidden rounded-2xl border border-[#2B2B2B]">
-              <Image
-                src={item.image}
-                alt={item.name}
-                fill
-                className="object-cover transition duration-500 group-hover:scale-105"
-              />
-            </div>
-
-            <div className="mb-4">
-              <Badge>{item.category}</Badge>
-            </div>
-
-            <h3 className="mb-3 text-xl font-semibold text-[#FAFAFA]">
-              {item.name}
-            </h3>
-
-            <p className="mb-6 flex-grow leading-relaxed text-[#C8C8C8]">
-              {item.description}
-            </p>
-
-            {item.link !== "#" && (
-              <div>
-                <Button href={item.link} variant="gold">
-                  View Product →
-                </Button>
+            <article className="group flex h-full flex-col rounded-3xl border border-[#2B2B2B] bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#D4AF37] hover:shadow-2xl hover:shadow-[#D4AF37]/10">
+              <div className="relative mb-5 h-48 overflow-hidden rounded-2xl border border-[#2B2B2B]">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                />
               </div>
-            )}
-          </article>
+
+              <div className="mb-4">
+                <Badge>{item.category}</Badge>
+              </div>
+
+              <h3 className="mb-3 text-xl font-semibold text-[#FAFAFA]">
+                {item.name}
+              </h3>
+
+              <p className="mb-6 flex-grow leading-relaxed text-[#C8C8C8]">
+                {item.description}
+              </p>
+
+              {item.link !== "#" && (
+                <div>
+                  <Button href={item.link} variant="gold">
+                    View Product →
+                  </Button>
+                </div>
+              )}
+            </article>
+          </Reveal>
         ))}
       </div>
     </section>
