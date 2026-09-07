@@ -1,5 +1,6 @@
-import { image } from "framer-motion/client";
 import Image from "next/image";
+import Badge from "./ui/Badge";
+import Button from "./ui/Button";
 
 const projects = [
   {
@@ -62,65 +63,59 @@ export default function Projects() {
       className="mx-auto max-w-6xl px-4 py-24 md:px-6 md:py-32"
     >
       <div className="mb-16 text-center">
-        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
-          Projects
+        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#D4AF37]">
+          Case Studies
         </p>
 
-        <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
+        <h2 className="text-4xl font-bold tracking-tight text-[#FAFAFA] md:text-5xl">
           Featured Work
         </h2>
+
+        <p className="mx-auto mt-4 max-w-3xl text-[#C8C8C8]">
+          A selection of projects that demonstrate my approach to application
+          development, problem-solving, usability, and software quality.
+        </p>
       </div>
 
       <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
-          <div
+          <article
             key={project.title}
-            className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md transition duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-400"
+            className="group flex flex-col rounded-3xl border border-[#2B2B2B] bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#D4AF37] hover:shadow-2xl hover:shadow-[#D4AF37]/10"
           >
-            <div className="relative mb-6 h-48 overflow-hidden rounded-2xl">
+            <div className="relative mb-6 h-48 overflow-hidden rounded-2xl border border-[#2B2B2B]">
               <Image
                 src={`/images/projects/${project.image}`}
-                alt={project.title}
+                alt={`${project.title} project screenshot`}
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
               />
             </div>
 
-            <h3 className="mb-4 text-2xl font-semibold">{project.title}</h3>
+            <h3 className="mb-4 text-2xl font-semibold text-[#FAFAFA]">
+              {project.title}
+            </h3>
 
-            <p className="mb-6 leading-relaxed text-gray-300">
+            <p className="mb-6 flex-grow leading-relaxed text-[#C8C8C8]">
               {project.description}
             </p>
 
             <div className="mb-6 flex flex-wrap gap-2">
               {project.tech.map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border border-white/10 bg-[#111827] px-3 py-1 text-sm text-gray-300"
-                >
-                  {tech}
-                </span>
+                <Badge key={tech}>{tech}</Badge>
               ))}
             </div>
 
-            <div className="flex gap-4">
-              <a
-                href={project.github}
-                target="_blank"
-                className="rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold transition hover:bg-blue-600"
-              >
+            <div className="flex flex-wrap gap-3">
+              <Button href={project.github} variant="gold">
                 GitHub
-              </a>
+              </Button>
 
-              <a
-                href={project.live}
-                target="_blank"
-                className="rounded-xl border border-white/20 px-4 py-2 text-sm font-semibold transition hover:bg-white hover:text-black"
-              >
+              <Button href={project.live} variant="silver">
                 Live Demo
-              </a>
+              </Button>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>

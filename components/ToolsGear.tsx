@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Badge from "./ui/Badge";
+import Button from "./ui/Button";
+import SectionHeading from "./ui/SectionHeading";
 
 const gear = [
   {
@@ -34,7 +37,7 @@ const gear = [
     category: "Creator Gear",
     image: "/images/gear/Docking-Station.jpg",
     description:
-      "a multiport adapter designed primarily to expand the connectivity and display capabilities of Apple MacBooks. .",
+      "A multiport adapter designed primarily to expand the connectivity and display capabilities of Apple MacBooks. .",
     link: "#",
   },
   {
@@ -52,28 +55,19 @@ export default function ToolsGear() {
       id="tools"
       className="mx-auto max-w-6xl px-4 py-24 md:px-6 md:py-32"
     >
-      <div className="mb-16 text-center">
-        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
-          Tools & Gear
-        </p>
-
-        <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
-          My Developer & Creator Setup
-        </h2>
-
-        <p className="mx-auto mt-4 max-w-2xl text-gray-300">
-          The tools, equipment, and technology I use for development, content
-          creation, productivity, and learning.
-        </p>
-      </div>
+      <SectionHeading
+        eyebrow="Technology Arsenal"
+        title="My Developer & Creator Setup"
+        description="The tools and technology I use for software development, content creation, productivity, and continuous learning."
+      />
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {gear.map((item) => (
-          <div
+          <article
             key={item.name}
-            className="group rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-md transition duration-300 hover:-translate-y-2 hover:border-blue-400"
+            className="group flex flex-col rounded-3xl border border-[#2B2B2B] bg-[#111111] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#D4AF37] hover:shadow-2xl hover:shadow-[#D4AF37]/10"
           >
-            <div className="relative mb-4 h-48 overflow-hidden rounded-2xl">
+            <div className="relative mb-5 h-48 overflow-hidden rounded-2xl border border-[#2B2B2B]">
               <Image
                 src={item.image}
                 alt={item.name}
@@ -82,21 +76,26 @@ export default function ToolsGear() {
               />
             </div>
 
-            <p className="mb-2 text-sm text-blue-400">{item.category}</p>
+            <div className="mb-4">
+              <Badge>{item.category}</Badge>
+            </div>
 
-            <h3 className="mb-3 text-xl font-semibold">{item.name}</h3>
+            <h3 className="mb-3 text-xl font-semibold text-[#FAFAFA]">
+              {item.name}
+            </h3>
 
-            <p className="mb-6 text-gray-300">{item.description}</p>
+            <p className="mb-6 flex-grow leading-relaxed text-[#C8C8C8]">
+              {item.description}
+            </p>
 
-            <a
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold transition hover:bg-blue-600"
-            >
-              View Product
-            </a>
-          </div>
+            {item.link !== "#" && (
+              <div>
+                <Button href={item.link} variant="gold">
+                  View Product →
+                </Button>
+              </div>
+            )}
+          </article>
         ))}
       </div>
     </section>

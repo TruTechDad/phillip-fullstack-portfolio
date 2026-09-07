@@ -1,5 +1,7 @@
 "use client";
 
+import Button from "@/components/ui/Button";
+import Badge from "@/components/ui/Badge";
 import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
@@ -14,18 +16,18 @@ import Journey from "@/components/Journey";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#0B0F19] text-white">
+    <main className="relative min-h-screen overflow-hidden bg-[#050505] text-[#FAFAFA]">
       {/* Background Glow Effects */}
-      <div className="absolute left-[-100px] top-[-100px] h-[300px] w-[300px] rounded-full bg-blue-500/20 blur-3xl" />
+      <div className="absolute -left-24 -top-24 h-[320px] w-[320px] rounded-full bg-[#D4AF37]/10 blur-3xl" />
 
-      <div className="absolute bottom-[-100px] right-[-100px] h-[300px] w-[300px] rounded-full bg-purple-500/20 blur-3xl" />
+      <div className="absolute -bottom-24 -right-24 h-[320px] w-[320px] rounded-full bg-[#C8C8C8]/5 blur-3xl" />
 
       <Navbar />
 
       <div className="mx-auto flex max-w-7xl flex-col-reverse items-center gap-16 px-6 py-24 lg:flex-row">
         {/* LEFT SIDE */}
         <div className="flex-1 text-center lg:text-left">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#D4AF37]">
             Full Stack Developer • QA • Cybersecurity
           </p>
 
@@ -38,36 +40,30 @@ export default function Home() {
             <span className="block text-[#D4AF37]">Hamilton Brown</span>
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#C8C8C8]">
             Full Stack Developer building modern web applications while
             expanding my expertise in QA Engineering, Cloud Technologies, AI,
             and Cybersecurity.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
-            <a
-              href="#projects"
-              className="rounded-2xl bg-blue-500 px-8 py-4 font-semibold transition hover:bg-blue-600"
-            >
-              View Projects
-            </a>
+          <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
+            <Button href="#projects" variant="gold">
+              Explore Case Studies →
+            </Button>
 
-            <a
-              href="#contact"
-              className="rounded-2xl border border-white/20 px-8 py-4 font-semibold transition hover:bg-white hover:text-black"
-            >
-              Contact Me
-            </a>
+            <Button href="#contact" variant="silver">
+              Let&apos;s Build Something
+            </Button>
           </div>
         </div>
 
         {/* RIGHT SIDE */}
         <div className="relative flex-1">
           {/* Glow */}
-          <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl" />
+          <div className="absolute inset-0 rounded-full bg-[#D4AF37]/10 blur-3xl" />
 
           {/* Photo */}
-          <div className="relative mx-auto h-[450px] w-[350px] overflow-hidden rounded-3xl border border-blue-500/20 bg-white/5 shadow-2xl shadow-blue-500/20">
+          <div className="relative mx-auto h-[450px] w-[350px] overflow-hidden rounded-3xl border border-[#D4AF37]/30 bg-[#111111] shadow-2xl shadow-[#D4AF37]/10">
             <Image
               src="/images/profile/phillip-profile.jpg"
               alt="Phillip Hamilton Brown"
@@ -81,41 +77,41 @@ export default function Home() {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity }}
-            className="absolute left-1/2 top-0 -translate-x-1/2 rounded-full border border-blue-400/20 bg-[#111827]/80 px-4 py-2 text-sm backdrop-blur-md"
+            className="absolute left-1/2 top-0 -translate-x-1/2"
           >
-            Python
+            <Badge>Python</Badge>
           </motion.div>
 
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity }}
-            className="absolute -left-4 top-16 rounded-full border border-blue-400/20 bg-[#111827]/80 px-4 py-2 text-sm backdrop-blur-md"
+            className="absolute -left-4 top-16"
           >
-            React
+            <Badge>React</Badge>
           </motion.div>
 
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 5, repeat: Infinity }}
-            className="absolute right-0 top-24 rounded-full border border-blue-400/20 bg-[#111827]/80 px-4 py-2 text-sm backdrop-blur-md"
+            className="absolute right-0 top-24"
           >
-            Next.js
+            <Badge>Next.js</Badge>
           </motion.div>
 
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 6, repeat: Infinity }}
-            className="absolute left-4 bottom-24 rounded-full border border-blue-400/20 bg-[#111827]/80 px-4 py-2 text-sm backdrop-blur-md"
+            className="absolute bottom-24 left-4"
           >
-            QA
+            <Badge>QA</Badge>
           </motion.div>
 
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 5.5, repeat: Infinity }}
-            className="absolute right-4 bottom-10 rounded-full border border-blue-400/20 bg-[#111827]/80 px-4 py-2 text-sm backdrop-blur-md"
+            className="absolute bottom-10 right-4"
           >
-            Cybersecurity
+            <Badge>Cybersecurity</Badge>
           </motion.div>
         </div>
       </div>

@@ -1,25 +1,44 @@
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#0B0F19]/80 backdrop-blur-lg">
+    <nav className="fixed top-0 z-50 w-full border-b border-[#2B2B2B] bg-[#050505]/90 backdrop-blur-lg">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
-        <h1 className="text-xl font-bold tracking-wide text-white">PHB.dev</h1>
+        <a
+          href="#"
+          className="text-xl font-bold tracking-[0.2em] text-[#D4AF37] transition hover:text-[#F4D03F]"
+        >
+          PHB.dev
+        </a>
 
-        <ul className="hidden gap-8 text-sm font-medium md:flex">
+        <ul className="hidden gap-8 text-sm font-medium text-[#C8C8C8] md:flex">
           <li>
-            <a href="#about">About</a>
+            <a href="#about" className="transition hover:text-[#D4AF37]">
+              About
+            </a>
           </li>
+
           <li>
-            <a href="#skills">Skills</a>
+            <a href="#skills" className="transition hover:text-[#D4AF37]">
+              Skills
+            </a>
           </li>
+
           <li>
-            <a href="#projects">Projects</a>
+            <a href="#projects" className="transition hover:text-[#D4AF37]">
+              Projects
+            </a>
           </li>
+
           <li>
-            <a href="#contact">Contact</a>
+            <a href="#contact" className="transition hover:text-[#D4AF37]">
+              Contact
+            </a>
           </li>
         </ul>
 
-        <button className="rounded-xl bg-blue-500 px-4 py-2 text-sm font-semibold transition hover:bg-blue-600">
+        <button
+          disabled
+          className="cursor-not-allowed rounded-xl border border-[#2B2B2B] bg-[#111111] px-4 py-2 text-sm font-semibold text-[#C8C8C8] opacity-70"
+        >
           Resume Coming Soon
         </button>
       </div>

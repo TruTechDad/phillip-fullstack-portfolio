@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b0f19;
-  --foreground: #f9fafb;
+  --background: #050505;
+  --foreground: #fafafa;
 }
 
 html {
@@ -21,7 +21,7 @@ body {
       rgba(139, 92, 246, 0.15),
       transparent 25%
     ),
-    #0b0f19;
+    #050505;
 
   color: var(--foreground);
 }
